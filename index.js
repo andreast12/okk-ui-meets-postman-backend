@@ -1,5 +1,6 @@
 import "dotenv/config";
 import express from "express";
+import cors from "cors";
 import connectDB from "./utils/db.js";
 import acaraRouter from "./routes/acara/acara.js";
 import kelompokRouter from "./routes/kelompok/kelompok.js";
@@ -10,6 +11,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 connectDB();
 
